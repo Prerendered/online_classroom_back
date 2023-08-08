@@ -13,6 +13,7 @@ public class UserController {
     @Autowired
     private UserService userServices;
 
+    // save user into database
     @PostMapping(value= "/save")
     public String saveUser(@RequestBody User users)
     {
@@ -20,12 +21,14 @@ public class UserController {
         return  users.get_id();
     }
 
+    // get all users
     @GetMapping(value= "/getAll")
     public Iterable <User>getUsers()
     {
         return userServices.listAll();
     }
 
+    // update user by id
     @PutMapping(value= "/edit/{id}")
     public User update(@RequestBody User user,@PathVariable(name="id") String _id)
     {
@@ -34,16 +37,36 @@ public class UserController {
         return  user;
     }
 
+    // delete user by id
     @DeleteMapping("/delete/{id}")
     public void deleteUser(@PathVariable("id") String _id)
     {
         userServices.deleteUser(_id);
     }
 
+    // get user by id
    @RequestMapping("/search/{id}")
    private User getUser(@PathVariable(name="id") String userid)
    {
        return userServices.getUserById(userid);
    }
+   
+   // check if user exists
+    @GetMapping(value = "/checkUser/{userName}&{password}")
+    public String checkUserExists(@PathVariable String userName, @PathVariable String password) {
+        
+        Iterable<User> users = userServices.listAll();
+        boolean userExists = false;
+        for (User user : users) {
+            if (user.getUserName().equals(userName) && user.getPassword().equals(password)) {
+                userExists = true;
+            }
+        }
 
+        if (userExists) {
+            return "User exists!";
+        } else {
+            return "User does not exist.";
+        }
+    }
 }
