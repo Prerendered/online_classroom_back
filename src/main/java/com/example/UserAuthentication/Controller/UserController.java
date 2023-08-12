@@ -3,6 +3,8 @@ package com.example.UserAuthentication.Controller;
 import com.example.UserAuthentication.Entity.User;
 import com.example.UserAuthentication.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -51,22 +53,25 @@ public class UserController {
        return userServices.getUserById(userid);
    }
    
-   // check if user exists
+   // backend
     @GetMapping(value = "/checkUser/{userName}&{password}")
-    public String checkUserExists(@PathVariable String userName, @PathVariable String password) {
-        
+    public ResponseEntity<?> checkUserExists(@PathVariable String userName, @PathVariable String password) {
         Iterable<User> users = userServices.listAll();
         boolean userExists = false;
+        String userRole = null;
         for (User user : users) {
             if (user.getUserName().equals(userName) && user.getPassword().equals(password)) {
                 userExists = true;
+                userRole = user.getRole();
+                break; // Break the loop once the user is found
             }
         }
-
+ 
         if (userExists) {
-            return "User exists!";
+            return ResponseEntity.ok(userRole);
         } else {
-            return "User does not exist.";
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
     }
+
 }
