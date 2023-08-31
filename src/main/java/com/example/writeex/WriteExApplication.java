@@ -1,5 +1,7 @@
 package com.example.writeex;
 
+import Entity.Exercise;
+import Repo.ExerciseRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -15,7 +17,6 @@ public class WriteExApplication {
         Exercise exercise = new Exercise();
         exercise.setQuestion("What is 2 + 2?");
         exercise.setAnswer("4");
-
 
         exerciseRepository.save(exercise);
 
