@@ -1,12 +1,14 @@
 package com.example.writeex;
 
-import Entity.Exercise;
-import Repo.ExerciseRepository;
+import com.example.writeex.Entity.Exercise;
+import com.example.writeex.Repo.ExerciseRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan({"Controller", "Service", "Repo", "Entity", "com.example.writeex"})
 public class WriteExApplication {
 
     public static void main(String[] args) {

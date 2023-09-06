@@ -1,4 +1,4 @@
-package Entity;
+package com.example.writeex.Entity;
 
 public class ExerciseRequest {
     private String question;
