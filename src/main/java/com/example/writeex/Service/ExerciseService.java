@@ -1,7 +1,7 @@
-package Service;
+package com.example.writeex.Service;
 
-import Repo.ExerciseRepository;
-import Entity.Exercise;
+import com.example.writeex.Repo.ExerciseRepository;
+import com.example.writeex.Entity.Exercise;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

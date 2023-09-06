@@ -1,8 +1,8 @@
-package Controller;
+package com.example.writeex.Controller;
 
-import Entity.Exercise;
-import Entity.ExerciseRequest;
-import Service.ExerciseService;
+import com.example.writeex.Entity.Exercise;
+import com.example.writeex.Entity.ExerciseRequest;
+import com.example.writeex.Service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
