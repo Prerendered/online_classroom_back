@@ -17,7 +17,7 @@ public class SubjectController {
     public String saveSubject(@RequestBody Subject Subjects)
     {
         SubjectServices.save_Update(Subjects);
-        return  Subjects.getSubjectName();
+        return Subjects.getSubjectName();
     }
 
     @GetMapping(value= "/getAll")
@@ -25,6 +25,7 @@ public class SubjectController {
     {
         return SubjectServices.listAll();
     }
+
 
     @PutMapping(value= "/edit/{id}")
     public Subject update(@RequestBody Subject Subject,@PathVariable(name="id") String _id)
