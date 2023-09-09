@@ -19,9 +19,6 @@ public class User {
         this.role = role;
     }
 
-    public User() {
-    }
-
     public String get_id() {
         return _id;
     }
