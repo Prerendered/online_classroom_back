@@ -7,11 +7,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Subject {
     @Id
     private String _id;
+    private String SubjectID;
     private String SubjectName;
     private String SubjectCompletion;
 
-    public Subject(String _id, String SubjectName, String SubjectCompletion) {
+    public Subject(String _id, String SubjectID, String SubjectName, String SubjectCompletion) {
         this._id = _id;
+        this.SubjectID = SubjectID;
         this.SubjectName = SubjectName;
         this.SubjectCompletion = SubjectCompletion;
     }
@@ -23,6 +25,14 @@ public class Subject {
 
     public void set_id(String _id) {
         this._id = _id;
+    }
+
+    public String get_subjectID() {
+        return SubjectID;
+    }
+
+    public void set_subjectID(String SubjectID) {
+        this.SubjectID = SubjectID;
     }
 
     public String getSubjectName() {
