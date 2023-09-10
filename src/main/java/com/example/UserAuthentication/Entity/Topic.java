@@ -45,8 +45,12 @@ public class Topic {
         this.TopicName = TopicName;
     }
 
-    public void getVideoID(String videoID){
+    public void setVideoID(String videoID){
         this.videoID = videoID;
+    }
+
+    public String getVideoID(){
+        return videoID;
     }
 
     public String getTopicCompletion() {
