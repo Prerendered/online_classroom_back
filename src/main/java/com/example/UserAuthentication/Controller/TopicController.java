@@ -31,7 +31,7 @@ public class TopicController {
     {
         Topic.set_id(_id);
         TopicServices.save_Update(Topic);
-        return  Topic;
+        return Topic;
     }
 
     @DeleteMapping("/delete/{id}")
