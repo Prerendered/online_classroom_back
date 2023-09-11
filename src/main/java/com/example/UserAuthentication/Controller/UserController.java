@@ -53,19 +53,8 @@ public class UserController {
        return userServices.getUserById(userid);
    }
    
-   // check if user exists
+   // backend
     @GetMapping(value = "/checkUser/{userName}&{password}")
-    public String checkUserExists(@PathVariable String userName, @PathVariable String password) {
-        
-        Iterable<User> users = userServices.listAll();
-        boolean userExists = false;
-        for (User user : users) {
-            if (user.getUserName().equals(userName) && user.getPassword().equals(password)) {
-                userExists = true;
-            }
-        }
-
-@GetMapping(value = "/checkUser/{userName}&{password}")
     public ResponseEntity<?> checkUserExists(@PathVariable String userName, @PathVariable String password) {
         Iterable<User> users = userServices.listAll();
         boolean userExists = false;
@@ -77,11 +66,12 @@ public class UserController {
                 break; // Break the loop once the user is found
             }
         }
- 
+
         if (userExists) {
             return ResponseEntity.ok(userRole);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
     }
+
 }
