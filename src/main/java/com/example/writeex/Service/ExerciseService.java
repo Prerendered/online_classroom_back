@@ -2,8 +2,11 @@ package com.example.writeex.Service;
 
 import com.example.writeex.Repo.ExerciseRepository;
 import com.example.writeex.Entity.Exercise;
+import com.example.writeex.Entity.ExerciseRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ExerciseService {
@@ -20,4 +23,16 @@ public class ExerciseService {
         exercise.setAnswer(answer);
         return exerciseRepository.save(exercise);
     }
+
+    public List<Exercise> getAllExercises() {
+        return exerciseRepository.findAll();
+    }
+
+
+
+    public Exercise getExerciseById(String Id) {
+        return exerciseRepository.findById(Id).orElse(null);
+    }
+
+
 }
