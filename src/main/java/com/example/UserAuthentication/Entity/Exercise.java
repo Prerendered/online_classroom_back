@@ -11,11 +11,15 @@ public class Exercise {
     private String subject;
     private String completed;
 
-    public Exercise(String _id, String question, String subject, String completed) {
+    private String answer; // added by Emmanuel
+
+    public Exercise(String _id, String question, String answer, String subject, String completed) {
         this._id = _id;
         this.question = question;
+        this.answer = answer; // added by Emmanuel
         this.subject = subject;
         this.completed = completed;
+
     }
 
     
@@ -33,6 +37,14 @@ public class Exercise {
 
     public void set_question(String question) {
         this.question = question;
+    }
+
+    public String get_answer() { // added by Emmanuel
+        return answer;
+    }
+
+    public void set_answer(String answer) { // added by Emmanuel
+        this.answer = answer;
     }
 
     public String getSubject() {
@@ -56,6 +68,7 @@ public class Exercise {
         return "Subject{" +
                 "_id='" + _id + '\'' +
                 ", question='" + question + '\'' +
+                ", answer='" + answer + '\'' +
                 ", subject='" + subject + '\'' +
                 ", completed='" + completed + '\'' +
                 '}';
