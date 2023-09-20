@@ -66,7 +66,7 @@ public class UserController {
                 break; // Break the loop once the user is found
             }
         }
- 
+
         if (userExists) {
             return ResponseEntity.ok(userRole);
         } else {
