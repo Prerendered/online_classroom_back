@@ -12,4 +12,10 @@ public class UserAuthenticationApplication {
 		SpringApplication.run(UserAuthenticationApplication.class, args); 
 	}
 
+	// Post a question and an answer in the forum
+
+
+	// Get all the questions and answers in the forum
+
+
 }
