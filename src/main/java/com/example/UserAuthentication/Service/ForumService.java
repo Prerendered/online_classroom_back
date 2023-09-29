@@ -62,4 +62,11 @@ public class ForumService
         return repo.findByUser(user);
     }
 
+    public void deleteByTitle(String title) {
+        repo.deleteByTitle(title);
+    }
+
+    public Iterable<Forum> getForumPostByCategory(String category) {
+        return repo.findByCategory(category);
+    }
 }

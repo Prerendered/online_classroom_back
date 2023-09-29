@@ -7,4 +7,8 @@ public interface ForumRepo extends MongoRepository<Forum, String>
 {
 
     Iterable<Forum> findByUser(String user);
+
+    void deleteByTitle(String title);
+
+    Iterable<Forum> findByCategory(String category);
 }

@@ -64,6 +64,11 @@ public class ForumController{
         return  forum;
     }
 
+    @DeleteMapping("/deleteByTitle/{title}")
+    public void deleteByTitle(@PathVariable("title") String title)
+    {
+        forumServices.deleteByTitle(title);
+    }
 
 
     // delete forum post by id
@@ -78,6 +83,13 @@ public class ForumController{
     private Forum getForumPost(@PathVariable(name="id") String forumid)
     {
         return forumServices.getForumPostById(forumid);
+    }
+
+    // sort subjects by category
+    @RequestMapping("/search/category/{category}")
+    private Iterable <Forum> getForumPostByCategory(@PathVariable(name="category") String category)
+    {
+        return forumServices.getForumPostByCategory(category);
     }
 
     // check if forum post exists by id
