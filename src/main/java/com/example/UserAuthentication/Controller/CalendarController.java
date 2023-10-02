@@ -1,7 +1,7 @@
 package com.example.UserAuthentication.Controller;
 
 import com.example.UserAuthentication.Entity.Calendar;
-import com.example.UserAuthentication.Service.CalendarServiceService;
+import com.example.UserAuthentication.Service.CalendarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
