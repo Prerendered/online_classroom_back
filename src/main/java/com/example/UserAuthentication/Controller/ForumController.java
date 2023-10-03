@@ -106,4 +106,10 @@ public class ForumController{
         return forumServices.getForumPostByUser(user);
     }
 
+    @GetMapping("/search/categories")
+    public Iterable<String> getForumPostCategories() {
+        return forumServices.getForumPostCategories();
+    }
+
+
 }
