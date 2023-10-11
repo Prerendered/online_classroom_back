@@ -46,6 +46,10 @@ public class UserController {
         userServices.deleteUser(_id);
     }
 
+
+
+
+
     // get user by id
    @RequestMapping("/search/{id}")
    private User getUser(@PathVariable(name="id") String userid)
@@ -75,3 +79,6 @@ public class UserController {
     }
 
 }
+
+
+//

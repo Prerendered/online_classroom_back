@@ -26,4 +26,7 @@ public class UserService {
     public User getUserById(String id) {
         return repo.findById(id).get();
     }
+
+    public void deleteByTitle(String title) {
+    }
 }
