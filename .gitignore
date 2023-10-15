@@ -31,3 +31,6 @@ build/
 
 ### ENV FILES###
 .env
+
+### BINARY FILES INTELLIJ ###
+.class
