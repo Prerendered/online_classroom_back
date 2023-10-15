@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins= "*")
-@RequestMapping("/api/v2/subjects")
+@RequestMapping("/api/subjects")
 public class SubjectController {
     
     @Autowired

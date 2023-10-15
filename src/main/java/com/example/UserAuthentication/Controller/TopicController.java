@@ -7,7 +7,7 @@ import com.example.UserAuthentication.Service.TopicService;
 
 @RestController
 @CrossOrigin(origins= "*")
-@RequestMapping("/api/v2/topics")
+@RequestMapping("/api/topics")
 public class TopicController {
 
     @Autowired
